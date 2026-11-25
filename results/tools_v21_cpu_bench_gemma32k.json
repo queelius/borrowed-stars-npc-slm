@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "google__gemma-3-1b-it__32k",
+    "quant": "Q4_K_M",
+    "contract": "v2",
+    "gguf_path": "/project/alex_phd/npc-text-gen/tools_v21/gguf_final/google__gemma-3-1b-it__32k_Q4_K_M.gguf",
+    "gguf_mb": 495.48,
+    "perf": {
+      "pp128_t4_tok_s": 142.44,
+      "ttft_pp128_t4_ms": 898.6,
+      "tg64_t4_tok_s": 37.83,
+      "pp128_t8_tok_s": 262.64,
+      "ttft_pp128_t8_ms": 487.4,
+      "tg64_t8_tok_s": 40.14
+    },
+    "samples": [
+      {
+        "idx": 56,
+        "subset": "tool_call",
+        "wall_ms": 3873.2,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"friendly\",\"line\":\"A few, traveler? My harvest is modest, but a bit of extra would be welcome.\",\"calls\":[{\"tool\":\"give_item\",\"args\":{\"item_id\":\"fresh_vegetables\",\"qty\":3}}]}"
+      },
+      {
+        "idx": 80,
+        "subset": "tool_call",
+        "wall_ms": 4295.8,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"The wind's been restless, and the sea's been unkind. Best to keep your doors bolted and your lanterns lit, stranger.\",\"calls\":[{\"tool\":\"steer_dialogue_node\",\"args\":{\"node_id\":\"ask_squall\"}}]}"
+      },
+      {
+        "idx": 90,
+        "subset": "refusal_horizon",
+        "wall_ms": 3604.7,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides whisper of things best left undisturbed, traveler. I tend to the sick and the weary here, not to pry into the deep currents of the unknown.\",\"calls\":[]}"
+      },
+      {
+        "idx": 0,
+        "subset": "pure_chitchat",
+        "wall_ms": 4164.1,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"The tides are restless, and so are the folk. Few speak freely, and those who do are often wary of what they say. Best not to ask too many questions.\",\"calls\":[]}"
+      }
+    ]
+  }
+]

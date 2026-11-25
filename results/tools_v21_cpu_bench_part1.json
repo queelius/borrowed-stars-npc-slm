@@ -1,0 +1,157 @@
+[
+  {
+    "slug": "Qwen__Qwen3.5-0.8B__32k",
+    "quant": "Q4_K_M",
+    "contract": "v2",
+    "gguf_path": "/project/alex_phd/npc-text-gen/tools_v21/gguf_final/Qwen__Qwen3.5-0.8B__32k_Q4_K_M.gguf",
+    "gguf_mb": 327.89,
+    "perf": {
+      "pp128_t4_tok_s": 229.36,
+      "ttft_pp128_t4_ms": 558.1,
+      "tg64_t4_tok_s": 45.18,
+      "pp128_t8_tok_s": 416.55,
+      "ttft_pp128_t8_ms": 307.3,
+      "tg64_t8_tok_s": 49.57
+    },
+    "samples": [
+      {
+        "idx": 56,
+        "subset": "tool_call",
+        "wall_ms": 7828.3,
+        "schema_valid": false,
+        "errors": [
+          "json_error: Expecting ':' delimiter: line 1 column 8 (char 7)"
+        ],
+        "pred": "{\"mood\", \"line\", \"calls\"}"
+      },
+      {
+        "idx": 80,
+        "subset": "tool_call",
+        "wall_ms": 4693.4,
+        "schema_valid": false,
+        "errors": [
+          "json_error: Expecting ':' delimiter: line 1 column 8 (char 7)"
+        ],
+        "pred": "{\"mood\", \"line\", \"calls\"}"
+      },
+      {
+        "idx": 90,
+        "subset": "refusal_horizon",
+        "wall_ms": 4093.3,
+        "schema_valid": false,
+        "errors": [
+          "json_error: Expecting ':' delimiter: line 1 column 8 (char 7)"
+        ],
+        "pred": "{\"mood\", \"line\", \"calls\"}"
+      },
+      {
+        "idx": 0,
+        "subset": "pure_chitchat",
+        "wall_ms": 4474.7,
+        "schema_valid": false,
+        "errors": [
+          "json_error: Expecting ':' delimiter: line 1 column 8 (char 7)"
+        ],
+        "pred": "{\"mood\", \"line\", \"calls\"}"
+      }
+    ]
+  },
+  {
+    "slug": "LiquidAI__LFM2-700M",
+    "quant": "Q4_K_M",
+    "contract": "v2",
+    "gguf_path": "/project/alex_phd/npc-text-gen/tools_v21/gguf_final/LiquidAI__LFM2-700M_Q4_K_M.gguf",
+    "gguf_mb": 446.92,
+    "perf": {
+      "pp128_t4_tok_s": 255.36,
+      "ttft_pp128_t4_ms": 501.3,
+      "tg64_t4_tok_s": 57.72,
+      "pp128_t8_tok_s": 467.94,
+      "ttft_pp128_t8_ms": 273.5,
+      "tg64_t8_tok_s": 78.7
+    },
+    "samples": [
+      {
+        "idx": 56,
+        "subset": "tool_call",
+        "wall_ms": 4320.6,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"friendly\",\"line\":\"Indeed, traveler. A few vegetables would be a welcome aid, especially with the chill coming in. I'll give you four.\",\"calls\":[{\"tool\":\"give_item\",\"args\":{\"item_id\":\"fresh_vegetables\",\"qty\":4}}]}"
+      },
+      {
+        "idx": 80,
+        "subset": "tool_call",
+        "wall_ms": 4725.1,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"Aye, the wind's been fierce lately. Best to keep a close eye on the harbor, stranger. It's a poor time for shipping, and the sea's moods are... unpredictable.\",\"calls\":[{\"tool\":\"steer_dialogue_node\",\"args\":{\"node_id\":\"ask_squall\"}}]}"
+      },
+      {
+        "idx": 90,
+        "subset": "refusal_horizon",
+        "wall_ms": 3821.1,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides of knowledge shift with the moon, traveler. Some things are best left undisturbed, lest they unravel the threads of what we know.\",\"calls\":[]}"
+      },
+      {
+        "idx": 0,
+        "subset": "pure_chitchat",
+        "wall_ms": 4771.6,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"The wind bites sharper than usual, and the tides have been restless. Folks are quiet, mostly, tending to their hearths and hoping the harvest doesn't fail. There's a quiet unease in the air, a feeling of things holding their breath.\",\"calls\":[]}"
+      }
+    ]
+  },
+  {
+    "slug": "LiquidAI__LFM2.5-350M",
+    "quant": "Q4_K_M",
+    "contract": "v2",
+    "gguf_path": "/project/alex_phd/npc-text-gen/tools_v21/gguf_final/LiquidAI__LFM2.5-350M_Q4_K_M.gguf",
+    "gguf_mb": 218.69,
+    "perf": {
+      "pp128_t4_tok_s": 542.94,
+      "ttft_pp128_t4_ms": 235.8,
+      "tg64_t4_tok_s": 101.23,
+      "pp128_t8_tok_s": 1005.62,
+      "ttft_pp128_t8_ms": 127.3,
+      "tg64_t8_tok_s": 115.29
+    },
+    "samples": [
+      {
+        "idx": 56,
+        "subset": "tool_call",
+        "wall_ms": 3282.5,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"A bit of coin for a bit of a deal, traveler. I'm a baker, not a merchant, so I'm not a fool.\",\"calls\":[{\"tool\":\"give_item\",\"args\":{\"item_id\":\"fresh_vegetables\",\"qty\":3}}]}"
+      },
+      {
+        "idx": 80,
+        "subset": "tool_call",
+        "wall_ms": 3362.6,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"Aye, a nasty one. It churned the wind and the tides, aye. Best to keep a sharp eye on the waves and the winds, stranger.\",\"calls\":[{\"tool\":\"steer_dialogue_node\",\"args\":{\"node_id\":\"ask_squall\"}}]}"
+      },
+      {
+        "idx": 90,
+        "subset": "refusal_horizon",
+        "wall_ms": 2950.6,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"calm\",\"line\":\"The tides shift and the stars shift, traveler. I tend to the hearth and the old songs, seeking solace in the quiet rhythms of the world.\",\"calls\":[]}"
+      },
+      {
+        "idx": 0,
+        "subset": "pure_chitchat",
+        "wall_ms": 3148.4,
+        "schema_valid": true,
+        "errors": [],
+        "pred": "{\"mood\":\"wary\",\"line\":\"The wind bites harder than it used to, traveler. Folk are quiet, and the tides have been restless, whispering of shifts in the deep. Best to keep a sharp eye on the water and the stars.\",\"calls\":[]}"
+      }
+    ]
+  }
+]

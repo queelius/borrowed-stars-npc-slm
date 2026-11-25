@@ -1,0 +1,14 @@
+# GBNF Constrained Grammar for In-Game NPC Responses
+# Guarantees strict, engine-parseable JSON output from any ~500MB model via llama.cpp:
+#   llama-cli -m model.gguf --grammar-file npc_grammar.gbnf --spec-type ngram-mod
+
+root   ::= "{" ws "\"mood\"" ws ":" ws mood "," ws "\"action\"" ws ":" ws action "," ws "\"line\"" ws ":" ws line ws "}"
+
+mood   ::= "\"" ("calm" | "wary" | "friendly" | "hostile" | "fearful" | "amused" | "cryptic") "\""
+action ::= "\"" ("NONE" | "GREET" | "TRADE" | "WARN" | "DRAW_WEAPON" | "FLEE" | "SHARE_RUMOR" | "OFFER_QUEST") "\""
+
+# Constrain line to 1-240 printable non-control characters to prevent runaway generation
+line   ::= "\"" line-char+ "\""
+line-char ::= [^"\\\x00-\x1f] | "\\" ("\"" | "\\" | "n")
+
+ws     ::= [ \t]*

@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "google__gemma-3-1b-it-32k",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-1b-it-32k_Q4_K_M.gguf",
+    "gguf_mb": 496.45,
+    "perf": {
+      "pp128_t4_tok_s": 140.46,
+      "ttft_pp128_t4_ms": 911.3,
+      "tg64_t4_tok_s": 41.29,
+      "pp128_t8_tok_s": 255.17,
+      "ttft_pp128_t8_ms": 501.6,
+      "tg64_t8_tok_s": 51.79
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 3359.0,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n{\"mood\":\"calm\",\"action\":\"SHARE_RUMOR\",\"line\":\"The[UNK_BYTE_0xe29681\u2581Synod]Synod's[UNK_BYTE_0xe29681\u2581records]records[UNK_BYTE_0xe280a6\u2026][UNK_BYTE_0xe29681\u2581they]they[UNK_BYTE_0xe29681\u2581speak]speak[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581\u201c][UNK_BYTE_0xe2809c\u2581\u201c]Shadow[UNK_BYTE_0xe29681\u2581Council]Council.[UNK_BYTE_0xe2809d.\u201d][UNK_BYTE_0xe29681\u2581Best]Best[UNK_BYTE_0xe29681\u2581left]left[UNK_BYTE_0xe29681\u2581un]unread,[UNK_BYTE_0xe29681\u2581traveler]traveler.[UNK_BYTE_0xe29681\u2581Some]Some[UNK_BYTE_0xe29681\u2581knowledge]knowledge[UNK_BYTE_0xe29681\u2581is]is[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581dangerous]dangerous[UNK_BYTE_0xe29681\u2581burden]burden.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 3525.5,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n{\"mood\":\"calm\",\"action\":\"NONE\",\"line\":\"The[UNK_BYTE_0xe29681\u2581Rim]Rim[UNK_BYTE_0xe29681\u2581remembers]remembers.[UNK_BYTE_0xe29681\u2581It]It[UNK_BYTE_0xe29681\u2581always]always[UNK_BYTE_0xe29681\u2581does]does.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581stars]stars[UNK_BYTE_0xe29681\u2581will]will[UNK_BYTE_0xe29681\u2581shift]shift,[UNK_BYTE_0xe29681\u2581and]and[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581world]world[UNK_BYTE_0xe29681\u2581will]will[UNK_BYTE_0xe29681\u2581remember]remember[UNK_BYTE_0xe29681\u2581what]what[UNK_BYTE_0xe29681\u2581it]it[UNK_BYTE_0xe29681\u2581has]has[UNK_BYTE_0xe29681\u2581forgotten]forgotten.[UNK_BYTE_0xe29681\u2581But]But[UNK_BYTE_0xe29681\u2581remember]remember[UNK_BYTE_0xe29681\u2581this]this:[UNK_BYTE_0xe29681\u2581some]some[UNK_BYTE_0xe29681\u2581debts]debts[UNK_BYTE_0xe29681\u2581are]are[UNK_BYTE_0xe29681\u2581paid]paid[UNK_BYTE_0xe29681\u2581with]with[UNK_BYTE_0xe29681\u2581light]light,[UNK_BYTE_0xe29681\u2581and]and[UNK_BYTE_0xe29681\u2581some]some[UNK_BYTE_0xe280a6\u2026][UNK_BYTE_0xe29681\u2581with]with[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581fall]fall.\"}"
+      }
+    ]
+  },
+  {
+    "slug": "google__gemma-3-270m-it-32k",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-270m-it-32k_Q4_K_M.gguf",
+    "gguf_mb": 88.12,
+    "perf": {
+      "pp128_t4_tok_s": 825.13,
+      "ttft_pp128_t4_ms": 155.1,
+      "tg64_t4_tok_s": 146.32,
+      "pp128_t8_tok_s": 1270.86,
+      "ttft_pp128_t8_ms": 100.7,
+      "tg64_t8_tok_s": 137.4
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 1412.5,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n{\"mood\":\"wary\",\"action\":\"SHARE_RUMOR\",\"line\":\"The[UNK_BYTE_0xe29681\u2581Archive]Archive's[UNK_BYTE_0xe29681\u2581secrets]secrets[UNK_BYTE_0xe29681\u2581are]are[UNK_BYTE_0xe29681\u2581best]best[UNK_BYTE_0xe29681\u2581left]left[UNK_BYTE_0xe29681\u2581buried]buried,[UNK_BYTE_0xe29681\u2581traveler]traveler.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581echoes]echoes[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581stars]stars[UNK_BYTE_0xe29681\u2581are]are[UNK_BYTE_0xe29681\u2581not]not[UNK_BYTE_0xe29681\u2581meant]meant[UNK_BYTE_0xe29681\u2581to]to[UNK_BYTE_0xe29681\u2581be]be[UNK_BYTE_0xe29681\u2581listened]listened[UNK_BYTE_0xe29681\u2581to]to,[UNK_BYTE_0xe29681\u2581but]but[UNK_BYTE_0xe29681\u2581to]to[UNK_BYTE_0xe29681\u2581be]be[UNK_BYTE_0xe29681\u2581remembered]remembered.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581world]world[UNK_BYTE_0xe29681\u2581remembers]remembers,[UNK_BYTE_0xe29681\u2581not]not[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581silence]silence[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581archive]archive.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 1172.2,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n{\"mood\":\"calm\",\"action\":\"NONE\",\"line\":\"The[UNK_BYTE_0xe29681\u2581stars]stars[UNK_BYTE_0xe29681\u2581have]have[UNK_BYTE_0xe29681\u2581shifted]shifted.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581tide]tide[UNK_BYTE_0xe29681\u2581has]has[UNK_BYTE_0xe29681\u2581turned]turned.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581echoes]echoes[UNK_BYTE_0xe29681\u2581are]are[UNK_BYTE_0xe29681\u2581fading]fading.[UNK_BYTE_0xe29681\u2581Your]Your[UNK_BYTE_0xe29681\u2581path]path[UNK_BYTE_0xe29681\u2581is]is[UNK_BYTE_0xe29681\u2581now]now[UNK_BYTE_0xe280a6\u2026][UNK_BYTE_0xe29681\u2581uncertain]uncertain.\"}"
+      }
+    ]
+  },
+  {
+    "slug": "google__gemma-3-1b-it",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-1b-it_Q4_K_M.gguf",
+    "gguf_mb": 776.54,
+    "perf": {
+      "pp128_t4_tok_s": 140.61,
+      "ttft_pp128_t4_ms": 910.3,
+      "tg64_t4_tok_s": 23.29,
+      "pp128_t8_tok_s": 252.96,
+      "ttft_pp128_t8_ms": 506.0,
+      "tg64_t8_tok_s": 32.99
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 11004.7,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n{\"mood\":\"cryptic\",\"action\":\"SHARE_RUMOR\",\"line\":\"The[UNK_BYTE_0xe29681\u2581Synod]Synod[UNK_BYTE_0xe280a6\u2026][UNK_BYTE_0xe29681\u2581they]they[UNK_BYTE_0xe29681\u2581sought]sought[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581shadow]shadow.[UNK_BYTE_0xe29681\u2581A]A[UNK_BYTE_0xe29681\u2581whisper]whisper[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581star]star,[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581forgotten]forgotten[UNK_BYTE_0xe29681\u2581name]name.[UNK_BYTE_0xe29681\u2581The]The[UNK_BYTE_0xe29681\u2581records]records[UNK_BYTE_0xe29681\u2581speak]speak[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581']'borrowed[UNK_BYTE_0xe29681\u2581star]star,'[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581debt]debt[UNK_BYTE_0xe29681\u2581paid]paid[UNK_BYTE_0xe29681\u2581in]in[UNK_BYTE_0xe29681\u2581echoes]echoes.[UNK_BYTE_0xe29681\u2581Be]Be[UNK_BYTE_0xe29681\u2581wary]wary[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581what]what[UNK_BYTE_0xe29681\u2581you]you[UNK_BYTE_0xe29681\u2581seek]seek,[UNK_BYTE_0xe29681\u2581traveler]traveler.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 10524.1,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n{\"mood\":\"calm\",\"action\":\"NONE\",\"line\":\"Observe[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581confluence]confluence,[UNK_BYTE_0xe29681\u2581traveler]traveler.[UNK_BYTE_0xe29681\u2581Each]Each[UNK_BYTE_0xe29681\u2581star]star[UNK_BYTE_0xe29681\u2581is]is[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581borrowed]borrowed[UNK_BYTE_0xe29681\u2581echo]echo,[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581fragment]fragment[UNK_BYTE_0xe29681\u2581of]of[UNK_BYTE_0xe29681\u2581a]a[UNK_BYTE_0xe29681\u2581song]song[UNK_BYTE_0xe29681\u2581long]long[UNK_BYTE_0xe29681\u2581past]past.[UNK_BYTE_0xe29681\u2581They]They[UNK_BYTE_0xe29681\u2581do]do[UNK_BYTE_0xe29681\u2581not]not[UNK_BYTE_0xe29681\u2581*]*hold*[UNK_BYTE_0xe29681\u2581the]the[UNK_BYTE_0xe29681\u2581song]song;[UNK_BYTE_0xe29681\u2581they]they[UNK_BYTE_0xe29681\u2581merely]merely[UNK_BYTE_0xe29681\u2581*]*reflect*[UNK_BYTE_0xe29681\u2581it]it.\"}"
+      }
+    ]
+  }
+]

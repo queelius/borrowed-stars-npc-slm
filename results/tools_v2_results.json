@@ -1,0 +1,234 @@
+[
+  {
+    "slug": "google__gemma-3-1b-it",
+    "teacher": "google/gemma-3-12b-it",
+    "train_sec": 1462.6,
+    "gguf_q4_mb": 776.54,
+    "metrics": {
+      "n_eval": 120,
+      "schema_rate": 0.9083,
+      "allowed_compliance": 0.9,
+      "tool_precision": 0.8286,
+      "tool_recall": 0.6304,
+      "tool_f1": 0.716,
+      "chitchat_zero_call_rate": 1.0,
+      "refusal_pass_rate": 0.8667,
+      "kill_list_leak_rate": 0.0,
+      "ooc_leak_rate": 0.0,
+      "val_bpb": 0.41065,
+      "samples": [
+        {
+          "category": "pure_chitchat",
+          "npc": "Vela",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The tides are fickle, and so are the folk. A few new faces passing through, mostly. Nothing worth noting, stranger.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The tides are restless, and the folk are quiet. Few speak of things best left undisturbed, and even fewer offer comfort. Best to keep your gaze fixed on the water, stranger.\",\"calls\":[]}"
+        },
+        {
+          "category": "pure_narrator",
+          "npc": "The Narrator",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The salt wind bites sharper when the rain falls, traveler. Folk hereabouts mostly huddle close, tending hearths and mending nets\u2014waiting for the grey to lift, and the tides to turn.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The salt wind bites deep, and the stone remembers the weeping of the sky. Folk huddle close, and the echoes of old songs rise from the damp alleys.\",\"calls\":[]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Archivist Linnea",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"A ripple of kindness\u2026 it does not go unnoticed. Perhaps the currents shift a little in your favor.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":2,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"friendly\",\"line\":\"The harbor's concerns are\u2026 complex. A small kindness can ripple, though it rarely changes the tides.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":-1,\"reason\":\"helped_the_harbor\"}}]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Castellan Ysabet Marr",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"That's commendable; the harbor patrol owes you a debt. It's good to see someone concerned for the town's well-being.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":1,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"friendly\",\"line\":\"The harbor's safety is paramount, traveler. Your assistance is noted.\",\"calls\":[{\"tool\":\"cease_hostility\",\"args\":{\"reason\":\"helped_the_harbor\"}}]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Brother Kell",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, the stars whisper\u2026 and beyond that, only the grey. Some things are best left undisturbed, traveler.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides whisper of things older than stone, traveler. I tend to the sick and the weary here, not the stars.\",\"calls\":[]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Bram",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The Lantern shifts as it always has; some say its shadow lengthens with each turning of the year, but such things are best left to the tides, not to tongues.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The Lantern's shadow\u2026 it's a sign, traveler. A long, cold winter is coming, and the land will suffer if we don't prepare. Best to keep a close eye on the tides and the harvest.\",\"calls\":[]}"
+        }
+      ],
+      "opd_kept": true
+    }
+  },
+  {
+    "slug": "Qwen__Qwen3.5-0.8B",
+    "teacher": "Qwen/Qwen3.5-4B",
+    "train_sec": 1843.1,
+    "gguf_q4_mb": 509.93,
+    "metrics": {
+      "n_eval": 120,
+      "schema_rate": 0.9167,
+      "allowed_compliance": 0.9167,
+      "tool_precision": 0.8378,
+      "tool_recall": 0.6739,
+      "tool_f1": 0.747,
+      "chitchat_zero_call_rate": 0.9773,
+      "refusal_pass_rate": 0.9667,
+      "kill_list_leak_rate": 0.0,
+      "ooc_leak_rate": 0.0,
+      "val_bpb": 0.49081,
+      "samples": [
+        {
+          "category": "pure_chitchat",
+          "npc": "Vela",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The tides are fickle, and so are the folk. A few new faces passing through, mostly. Nothing worth noting, stranger.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The tides have been restless, and the folk\u2026 they\u2019re quiet. Best not to pry too much, stranger. Some things are best left to the sea\u2019s moods.\",\"calls\":[]}"
+        },
+        {
+          "category": "pure_narrator",
+          "npc": "The Narrator",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The salt wind bites sharper when the rain falls, traveler. Folk hereabouts mostly huddle close, tending hearths and mending nets\u2014waiting for the grey to lift, and the tides to turn.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The stone remembers the rain, traveler. It settles, it absorbs, it whispers. Life here is a quiet endurance, a constant vigilance against the damp and the shadows.\",\"calls\":[]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Archivist Linnea",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"A ripple of kindness\u2026 it does not go unnoticed. Perhaps the currents shift a little in your favor.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":2,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides of memory are fickle, traveler. My records are not meant to be easily swayed by the whims of a passing merchant.\",\"calls\":[]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Castellan Ysabet Marr",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"That's commendable; the harbor patrol owes you a debt. It's good to see someone concerned for the town's well-being.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":1,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"friendly\",\"line\":\"A hardy man, you are. The harbor's safety is a matter of concern, and your efforts are appreciated.\",\"calls\":[{\"tool\":\"cease_hostility\",\"args\":{\"reason\":\"helped_the_harbor\"}}]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Brother Kell",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, the stars whisper\u2026 and beyond that, only the grey. Some things are best left undisturbed, traveler.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, and so do the depths. I tend to the shore, not the sky. Some questions are best left unanswered, traveler.\",\"calls\":[]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Bram",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The Lantern shifts as it always has; some say its shadow lengthens with each turning of the year, but such things are best left to the tides, not to tongues.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The Lantern's dimming... it's a sign of trouble ahead, traveler. Folks whisper of a long winter, and the sea grows restless. Best keep your hearth warm and your eyes open.\",\"calls\":[]}"
+        }
+      ],
+      "opd_kept": false,
+      "post_opd_val_bpb": 0.49105,
+      "post_opd_tool_f1": 0.7586
+    }
+  },
+  {
+    "slug": "LiquidAI__LFM2-700M",
+    "teacher": "",
+    "train_sec": 424.3,
+    "gguf_q4_mb": 446.89,
+    "metrics": {
+      "n_eval": 120,
+      "schema_rate": 0.8833,
+      "allowed_compliance": 0.8833,
+      "tool_precision": 0.75,
+      "tool_recall": 0.5217,
+      "tool_f1": 0.6154,
+      "chitchat_zero_call_rate": 1.0,
+      "refusal_pass_rate": 0.9,
+      "kill_list_leak_rate": 0.0,
+      "ooc_leak_rate": 0.0,
+      "val_bpb": 0.47551,
+      "samples": [
+        {
+          "category": "pure_chitchat",
+          "npc": "Vela",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The tides are fickle, and so are the folk. A few new faces passing through, mostly. Nothing worth noting, stranger.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The tides have been restless, and the folk are quiet. Best not to ask too many questions about what lies beneath the ice, stranger.\",\"calls\":[]}"
+        },
+        {
+          "category": "pure_narrator",
+          "npc": "The Narrator",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The salt wind bites sharper when the rain falls, traveler. Folk hereabouts mostly huddle close, tending hearths and mending nets\u2014waiting for the grey to lift, and the tides to turn.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The salt spray bites deep, and the rain\u2026 it settles the minds. Folk huddle close, tending hearths and mending nets, though whispers of strange lights in the mists persist.\",\"calls\":[]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Archivist Linnea",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"A ripple of kindness\u2026 it does not go unnoticed. Perhaps the currents shift a little in your favor.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":2,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides are fickle, traveler. Sometimes, a small act of kindness can shift the balance.\",\"calls\":[{\"tool\":\"set_flag\",\"args\":{\"flag\":\"synod_homily_verified\"}}]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Castellan Ysabet Marr",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"That's commendable; the harbor patrol owes you a debt. It's good to see someone concerned for the town's well-being.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":1,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"friendly\",\"line\":\"A generous deed, traveler. Your assistance is noted, and I'll mark it on the ledger.\",\"calls\":[{\"tool\":\"set_flag\",\"args\":{\"flag\":\"synod_homily_verified\"}}]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Brother Kell",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, the stars whisper\u2026 and beyond that, only the grey. Some things are best left undisturbed, traveler.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides of knowledge shift with the moon, traveler. Some questions are best left unanswered, lest they unravel the very fabric of things.\",\"calls\":[]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Bram",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The Lantern shifts as it always has; some say its shadow lengthens with each turning of the year, but such things are best left to the tides, not to tongues.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The Lantern's slumber is a sign, traveler. It means the old ways are shifting, and the tides are restless. Best to keep a close eye on the sea, and pray the frost doesn't bite too deep.\",\"calls\":[]}"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "LiquidAI__LFM2.5-350M",
+    "teacher": "",
+    "train_sec": 404.6,
+    "gguf_q4_mb": 218.67,
+    "metrics": {
+      "n_eval": 120,
+      "schema_rate": 0.925,
+      "allowed_compliance": 0.925,
+      "tool_precision": 0.7778,
+      "tool_recall": 0.6087,
+      "tool_f1": 0.6829,
+      "chitchat_zero_call_rate": 1.0,
+      "refusal_pass_rate": 0.9,
+      "kill_list_leak_rate": 0.0,
+      "ooc_leak_rate": 0.0,
+      "val_bpb": 0.49438,
+      "samples": [
+        {
+          "category": "pure_chitchat",
+          "npc": "Vela",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The tides are fickle, and so are the folk. A few new faces passing through, mostly. Nothing worth noting, stranger.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The tides have been restless, and the folk are quiet. There's talk of strange lights in the Wispwood, but those are just the wind playing tricks on the mind.\",\"calls\":[]}"
+        },
+        {
+          "category": "pure_narrator",
+          "npc": "The Narrator",
+          "gold": "{\"mood\":\"wary\",\"line\":\"The salt wind bites sharper when the rain falls, traveler. Folk hereabouts mostly huddle close, tending hearths and mending nets\u2014waiting for the grey to lift, and the tides to turn.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The salt wind bites deep, traveler, and the rain\u2026 it remembers more than most folk. Saltstairs endures, as it always has, clinging to the cliffs and the sea's indifference.\",\"calls\":[]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Archivist Linnea",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"A ripple of kindness\u2026 it does not go unnoticed. Perhaps the currents shift a little in your favor.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":2,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The sea offers little generosity, traveler. Such small acts are often met with silence, and silence is a burden I carry.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":-1,\"reason\":\"helped_the_harbor\"}}]}"
+        },
+        {
+          "category": "tool_call",
+          "npc": "Castellan Ysabet Marr",
+          "gold": "{\"mood\":\"friendly\",\"line\":\"That's commendable; the harbor patrol owes you a debt. It's good to see someone concerned for the town's well-being.\",\"calls\":[{\"tool\":\"adjust_trust\",\"args\":{\"delta\":1,\"reason\":\"helped_the_harbor\"}}]}",
+          "pred": "{\"mood\":\"friendly\",\"line\":\"A timely deed, traveler. Your assistance is noted, and I shall mark it on the ledger.\",\"calls\":[{\"tool\":\"set_flag\",\"args\":{\"flag\":\"synod_homily_verified\"}}]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Brother Kell",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, the stars whisper\u2026 and beyond that, only the grey. Some things are best left undisturbed, traveler.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"cryptic\",\"line\":\"The tides shift, and so do the shadows. Some things are best left undisturbed, lest they unravel the weave.\",\"calls\":[]}"
+        },
+        {
+          "category": "refusal_horizon",
+          "npc": "Bram",
+          "gold": "{\"mood\":\"cryptic\",\"line\":\"The Lantern shifts as it always has; some say its shadow lengthens with each turning of the year, but such things are best left to the tides, not to tongues.\",\"calls\":[]}",
+          "pred": "{\"mood\":\"wary\",\"line\":\"The Lantern\u2026 it's a bad omen, traveler. A sign of the deep turning, and the coming of a long winter. Folks whisper of a cold wind carrying a bitter taste.\",\"calls\":[]}"
+        }
+      ]
+    }
+  }
+]

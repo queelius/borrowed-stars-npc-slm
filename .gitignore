@@ -1,0 +1,27 @@
+# Binaries, weights, caches
+models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.bin
+vendor/
+bin/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Keep full Borrowed Stars story/lore & private training dumps out of public git
+data/borrowed_stars_lore/
+data/BORROWED_STARS_DATASET.md
+data/borrowed_stars_npcs.jsonl
+data/narrator_interactive.jsonl
+data/narrator_speech.jsonl
+data/bs_train.jsonl
+data/bs_eval.jsonl
+data/bs_lore_chunks.jsonl
+data/bs_synth_train.jsonl
+data/bs_tools_v2_train.jsonl
+data/bs_tools_v2_eval.jsonl
+data/bs_domain_terms.json

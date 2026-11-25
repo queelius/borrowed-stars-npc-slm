@@ -1,0 +1,526 @@
+[
+  {
+    "repo": "Qwen/Qwen3.5-0.8B",
+    "param_stats": {
+      "total_params": 752393024,
+      "backbone_params": 498113344,
+      "io_params": 254279680,
+      "io_pct": 33.8,
+      "vocab_size": 248077,
+      "tied_embeddings": true,
+      "est_q4_mb_raw": 454.7,
+      "est_q4_mb_32k_vocab": 310.0
+    },
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "out_proj"
+    ],
+    "train_sec": 253.54,
+    "total_sec": 376.73,
+    "zero_shot": {
+      "val_bpb": 1.26721,
+      "npc_val_bpb": 1.28083,
+      "narrator_val_bpb": 1.25331,
+      "raw_schema_valid_rate": 0.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 2 (char 1)"
+          }
+        }
+      ]
+    },
+    "adapted": {
+      "val_bpb": 1.45054,
+      "npc_val_bpb": 1.48764,
+      "narrator_val_bpb": 1.41266,
+      "raw_schema_valid_rate": 1.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"SHARE_RUMOR\", \"line\": \"The homily never mentions the Shears. It only speaks of the Needle and the Storm. Whoever wrote that homily must be more than a priest\u2014perhaps a keeper of the vault.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{\"mood\": \"wary\", \"action\": \"WARN\", \"line\": \"Because every time you lift that pulley, even one warm ember passes through the vault. Never ask why I stopped the hoist\u2014just keep your eyes on the ground.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Not a syllable. Though if you keep staring at the sky while he adjusts his glass, he will eventually forget how to speak.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"The world does not break in one night. It breaks in five slow turns\u2014each star holding its place until the last ember cools, then slowly, gracefully, fades into the void.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        }
+      ]
+    },
+    "bpb_gain": -0.18333
+  },
+  {
+    "repo": "LiquidAI/LFM2.5-1.2B-Instruct",
+    "param_stats": {
+      "total_params": 1170340608,
+      "backbone_params": 1036122880,
+      "io_params": 134217728,
+      "io_pct": 11.5,
+      "vocab_size": 64402,
+      "tied_embeddings": true,
+      "est_q4_mb_raw": 687.1,
+      "est_q4_mb_32k_vocab": 643.8
+    },
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "in_proj",
+      "out_proj",
+      "w1",
+      "w2",
+      "w3"
+    ],
+    "train_sec": 75.43,
+    "total_sec": 128.45,
+    "zero_shot": {
+      "val_bpb": 1.27126,
+      "npc_val_bpb": 1.22741,
+      "narrator_val_bpb": 1.31603,
+      "raw_schema_valid_rate": 0.3125,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "I\u2019ve seen the sealed ledger in the archives\u2014some pages are missing. But the final entry mentions a star that never shines. That\u2019s the only one the Synod erased. I\u2019ll need to find the hidden vault before the next council.",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 1 (char 0)"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "\"Your words tremble like a blade unseen. The stars you claim to guard are but shadows in my hands. Speak, or let the silence claim you.\"",
+          "schema": {
+            "valid": false,
+            "reason": "not_a_dict"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "\"Master Solis, the stars whisper through your lens. But do you trust their voice?\"",
+          "schema": {
+            "valid": false,
+            "reason": "not_a_dict"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "\"Your words carry weight, traveler. The stars are shifting\u2014will you stand with us, or let the Conjunction claim what is yours?\"",
+          "schema": {
+            "valid": false,
+            "reason": "not_a_dict"
+          }
+        }
+      ]
+    },
+    "adapted": {
+      "val_bpb": 1.40865,
+      "npc_val_bpb": 1.41359,
+      "narrator_val_bpb": 1.4036,
+      "raw_schema_valid_rate": 1.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": \"cryptic\", \"action\": \"SHARE_RUMOR\", \"line\": \"The Synod tried to bury the winter famine clause in Chapter 12. If you want the full almanac, ask me about the four borrowed stars.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{\"mood\": \"wary\", \"action\": \"WARN\", \"line\": \"Because when you drive your own star's annealed keystone into the bedrock, even an eclipse can break the roof.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": \"friendly\", \"action\": \"NONE\", \"line\": \"Not a syllable. Though if you keep staring at that glass long enough, even a blind master can learn which stone is breaking.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"Every age reaches for its favorite thread\u2014tighten it a notch, and the roof holds.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        }
+      ]
+    },
+    "bpb_gain": -0.13739
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-0.5B-Instruct",
+    "error": "ValueError: [PEFT:PeftType.LORA] Module 'out_proj' is incompatible with Mamba-based models (model_type='falcon_h1'). Incompatible modules: {'out_proj', 'conv1d'}. Please remove it from `target_modules` to avoid compatibility issues."
+  },
+  {
+    "repo": "ibm-granite/granite-4.0-h-350m",
+    "param_stats": {
+      "total_params": 340332224,
+      "backbone_params": 263261888,
+      "io_params": 77070336,
+      "io_pct": 22.6,
+      "vocab_size": 100352,
+      "tied_embeddings": true,
+      "est_q4_mb_raw": 202.7,
+      "est_q4_mb_32k_vocab": 168.7
+    },
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "in_proj",
+      "out_proj"
+    ],
+    "train_sec": 203.26,
+    "total_sec": 298.06,
+    "zero_shot": {
+      "val_bpb": 1.40976,
+      "npc_val_bpb": 1.43707,
+      "narrator_val_bpb": 1.38187,
+      "raw_schema_valid_rate": 0.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": friendly, \"action\": share_rumor, \"line\": \"I'm afraid the redacted homily may contain some sensitive information. Let's keep it family-friendly.\"}",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 10 (char 9)"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{\"mood\": fearful, \"action\": FLEE, \"line\": \"Morvyn, your betrayal of the Rekindler's trust has shattered the fabric of our alliance. I am your guardian, and I will not let you harm the world's most sacred artifact.\"}",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 10 (char 9)"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": friendly, \"action\": share_rumor, \"line\": \"I've heard whispers of a mysterious artifact that could change the course of history. It's said to be from the ancient Elvish civilization. I'm curious to know more.\"}",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 10 (char 9)"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": friendly, \"action\": GREET, \"line\": \"I'm glad you're here. I hope you find the stars as fascinating as I do.\"}",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting value: line 1 column 10 (char 9)"
+          }
+        }
+      ]
+    },
+    "adapted": {
+      "val_bpb": 1.34575,
+      "npc_val_bpb": 1.37302,
+      "narrator_val_bpb": 1.3179,
+      "raw_schema_valid_rate": 1.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"SHARE_RUMOR\", \"line\": \"The silvers for the corrected parchment cost two silvers more than the two silvers claimed by the elders. The silvers are still in the vault\u2014keep an eye on the vault-masons.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{\"mood\": \"fearful\", \"action\": \"OFFER_QUEST\", \"line\": \"Because the world trusts a single star more than it does a well-oiled hoist. If you do not repair the ribs, the world will break.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"Because even the finest prism-well knows when a glass is cold. I have spoken to the Keepers twice since the rain lifted, and neither has stopped to read my ledger.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"Five borrowed stars do not die. They are held in the well, kept safe from mariners, and never spoken of again. When the Conjunction reaches its peak, one of them will break\u2014slowly, like a broken seam in the keel.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        }
+      ]
+    },
+    "bpb_gain": 0.06401
+  },
+  {
+    "repo": "ibm-granite/granite-4.0-h-1b",
+    "param_stats": {
+      "total_params": 1461538368,
+      "backbone_params": 1307397696,
+      "io_params": 154140672,
+      "io_pct": 10.5,
+      "vocab_size": 100352,
+      "tied_embeddings": true,
+      "est_q4_mb_raw": 857.0,
+      "est_q4_mb_32k_vocab": 788.9
+    },
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "in_proj",
+      "out_proj"
+    ],
+    "train_sec": 259.83,
+    "total_sec": 387.38,
+    "zero_shot": {
+      "val_bpb": 1.16707,
+      "npc_val_bpb": 1.2009,
+      "narrator_val_bpb": 1.13253,
+      "raw_schema_valid_rate": 0.875,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"The Synod homily on the redacted almanac? It's a red herring. The real clue lies in the almanac's hidden almanac, a cryptic reference to the ancient star map.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{",
+          "schema": {
+            "valid": false,
+            "reason": "json_error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": \"friendly\", \"action\": \"SHARE_RUMOR\", \"line\": \"The stars are whispering secrets, Master Solis. The observatory's brass lens is a silent witness to the cosmos' ancient dance.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"The stars are borrowed, but the sky is ours. The end is in your hands.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        }
+      ]
+    },
+    "adapted": {
+      "val_bpb": 1.49123,
+      "npc_val_bpb": 1.56433,
+      "narrator_val_bpb": 1.4166,
+      "raw_schema_valid_rate": 1.0,
+      "samples": [
+        {
+          "idx": 0,
+          "subset": "npc",
+          "prompt": "[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [INTENT: Share cautious verifiable clue]",
+          "gold": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"Keep your voice low near the gallery rail. Compare the Year-Fourteen quarry invoice with the censored margin note\u2014the dates match to the day.\"}",
+          "pred": "{\"mood\": \"wary\", \"action\": \"SHARE_RUMOR\", \"line\": \"My elders called it the ship that never sailed. The one they burned before the Flood\u2014only the front pillar survived the censors.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 2,
+          "subset": "npc",
+          "prompt": "[LOC: Babel Spire Cloisters] [NPC: Morvyn Bael, Keeper of the Seal, The Uncounted] [WORLD: Hoist tension shaking the stone ribs] [PLAYER: Ask why he sabotaged the Rekindler hoist] [INTENT: Plead gravely from historical dread]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"WARN\", \"line\": \"I have walked the drowned masonry beneath Crownspire. Light a cold-cut prism at this height and the sea will finish what the First Reckoning began.\"}",
+          "pred": "{\"mood\": \"fearful\", \"action\": \"NONE\", \"line\": \"Because the engine that kept the shaft below the Shears from collapsing was meant for the sky, not a basement watch-list! They called it a mercy\u2014and called it a curse when the keystone broke.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 8,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Vesperhold Observatory] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Master Solis calibrating brass lens] [PLAYER: Can Master Solis hear you too?] [INTENT: Reply with dry warmth]",
+          "gold": "{\"mood\": \"amused\", \"action\": \"NONE\", \"line\": \"Solis cannot hear anything that refuses to sit still inside an optical table. No, traveler\u2014this quiet corner is just between us.\"}",
+          "pred": "{\"mood\": \"friendly\", \"action\": \"NONE\", \"line\": \"A fine voice, traveler. I am the one who reads the stars when the mortar-coal runs low. You can call me the Unseen Chronicler, if you wish.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        },
+        {
+          "idx": 13,
+          "subset": "narrator_interactive",
+          "prompt": "[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [INTENT: Hand agency solemnly to the player]",
+          "gold": "{\"mood\": \"calm\", \"action\": \"OFFER_QUEST\", \"line\": \"For the first time in four ages, the page ahead is wet and unwritten. Step onto the plinth, traveler\u2014and show me what line comes next.\"}",
+          "pred": "{\"mood\": \"calm\", \"action\": \"NONE\", \"line\": \"Whatever you do\u2014do not look at the star until the last breath is gone. The sky will tell its own story when the cask is empty.\"}",
+          "schema": {
+            "valid": true,
+            "reason": "ok"
+          }
+        }
+      ]
+    },
+    "bpb_gain": -0.32416
+  },
+  {
+    "repo": "ByteDance/Ouro-1.4B",
+    "error": "AttributeError: 'OuroConfig' object has no attribute 'pad_token_id'"
+  }
+]

@@ -1,0 +1,10 @@
+run_id	mode	node	budget_sec	val_bpb	artifact_mb	decode_tok_s	pass_gate	notes
+j-87c227f7	looped-scratch	siue-cn19-7152	15	1.629482	0.941	46.26	1	Baseline 1.87M params (1+3x2+1=8 eff layers, QAT 4-bit, ngram order=5 alpha=0.35)
+j-6dff0b7f	stage1-lore-sft	siue-an21-7215	1440	0.955700	496.4	51.80	1	Stage 1 Gemma 3 1B (32K pruned Q4_K_M, 100% raw JSON, 1000 synth + 3x56 golden)
+j-6dff0b7f	stage1-lore-sft	siue-an21-7215	1440	1.010900	327.9	37.80	1	Stage 1 Qwen3.5-0.8B (32K pruned Q4_K_M, Apache 2.0, 100% raw JSON)
+j-6dff0b7f	stage1-lore-sft	siue-an21-7215	1440	1.023900	446.9	73.40	1	Stage 1 LiquidAI LFM2-700M (Q4_K_M, 100% raw JSON)
+j-6dff0b7f	stage1-lore-sft	siue-an21-7215	1440	1.035900	218.7	90.60	1	Stage 1 LiquidAI LFM2.5-350M (Q4_K_M, 100% raw JSON)
+j-2f804bd7	stage2-tools-v21	siue-an21-7215	1480	0.410650	495.5	40.14	1	Stage 2 Gemma 3 1B (32K SPM pruned Q4_K_M, 23-tool F1=0.716, refusal=86.7%, chitchat0=100%, 0% kill-list, 4/4 live GBNF)
+j-e75c8359	stage2-tools-v21	siue-an21-7215	2400	0.490810	327.9	49.26	1	Stage 2 Qwen3.5-0.8B (32K pruned Q4_K_M, Apache 2.0, 23-tool F1=0.747 [0.759 OPD], refusal=96.7%, 0% kill-list, 4/4 live GBNF --no-jinja)
+j-e75c8359	stage2-tools-v21	siue-an21-7215	2400	0.475510	446.9	78.70	1	Stage 2 LiquidAI LFM2-700M (Q4_K_M, 23-tool F1=0.615, refusal=90.0%, chitchat0=100%, 0% kill-list, 4/4 live GBNF)
+j-e75c8359	stage2-tools-v21	siue-an21-7215	2400	0.494380	218.7	115.29	1	Stage 2 LiquidAI LFM2.5-350M (Q4_K_M, 23-tool F1=0.683, raw schema=92.5%, refusal=90.0%, chitchat0=100%, 0% kill-list, 4/4 live GBNF)

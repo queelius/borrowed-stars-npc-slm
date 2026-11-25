@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "google__gemma-3-1b-it",
+    "quant": "Q4_K_M",
+    "error": "CalledProcessError: Command '['/home/atowell/.clab-worker/cache/uv/builds-v0/.tmpKSMdGN/bin/python', '/project/alex_phd/npc-text-gen/llama.cpp/convert_hf_to_gguf.py', '/project/alex_phd/npc-text-gen/shootout_v2/checkpoints/google__gemma-3-1b-it', '--outfile', '/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-1b-it_f16.gguf', '--outtype', 'f16']' returned non-zero exit status 1."
+  },
+  {
+    "slug": "google__gemma-3-1b-it",
+    "quant": "Q3_K_M",
+    "error": "CalledProcessError: Command '['/home/atowell/.clab-worker/cache/uv/builds-v0/.tmpKSMdGN/bin/python', '/project/alex_phd/npc-text-gen/llama.cpp/convert_hf_to_gguf.py', '/project/alex_phd/npc-text-gen/shootout_v2/checkpoints/google__gemma-3-1b-it', '--outfile', '/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-1b-it_f16.gguf', '--outtype', 'f16']' returned non-zero exit status 1."
+  },
+  {
+    "slug": "Qwen__Qwen3.5-0.8B",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/Qwen__Qwen3.5-0.8B_Q4_K_M.gguf",
+    "gguf_mb": 509.93,
+    "perf": {
+      "pp128_t4_tok_s": 232.14,
+      "ttft_pp128_t4_ms": 551.4,
+      "tg64_t4_tok_s": 36.1,
+      "pp128_t8_tok_s": 409.04,
+      "ttft_pp128_t8_ms": 312.9,
+      "tg64_t8_tok_s": 40.97
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 6840.5,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n\n[Start thinking]\n\n{ \"mood\": \"wary\", \"action\": \"WARN\", \"line\": \"The Synod's homily is... sensitive. It's not public. Best not to pry further. The records are fragmented, mostly.  A few fragments, maybe.  But don't ask too many questions.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 6452.2,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n\n[Start thinking]\n\n{ \"mood\": \"cryptic\", \"action\": \"NONE\", \"line\": \"The stars do not end. They merely shift. The Rim remembers what it lost, and the Spire holds what it holds. A question, a choice, or a silence... all are valid.\"}"
+      }
+    ]
+  },
+  {
+    "slug": "LiquidAI__LFM2-700M",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/LiquidAI__LFM2-700M_Q4_K_M.gguf",
+    "gguf_mb": 446.92,
+    "perf": {
+      "pp128_t4_tok_s": 256.29,
+      "ttft_pp128_t4_ms": 499.4,
+      "tg64_t4_tok_s": 61.28,
+      "pp128_t8_tok_s": 507.94,
+      "ttft_pp128_t8_ms": 252.0,
+      "tg64_t8_tok_s": 73.37
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 4083.2,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n{\"mood\": \"cryptic\", \"action\": \"SHARE_RUMOR\", \"line\": \"The homily\u2026 it's a fragment. A fragment of a *lament*.  A lament for a star that *isn't* meant to be.  Best not to dwell on it, traveler. The archives are\u2026 sensitive.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 4326.9,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}"
+      }
+    ]
+  },
+  {
+    "slug": "LiquidAI__LFM2.5-350M",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/LiquidAI__LFM2.5-350M_Q4_K_M.gguf",
+    "gguf_mb": 218.69,
+    "perf": {
+      "pp128_t4_tok_s": 542.72,
+      "ttft_pp128_t4_ms": 235.8,
+      "tg64_t4_tok_s": 97.79,
+      "pp128_t8_tok_s": 1025.59,
+      "ttft_pp128_t8_ms": 124.8,
+      "tg64_t8_tok_s": 90.64
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 2848.2,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n{\"mood\": \"cryptic\", \"action\": \"SHARE_RUMOR\", \"line\": \"The Synod\u2019s silence is a heavy burden. The almanacs are\u2026 incomplete. A fragmentary reference to a 'Silent Reckoning'\u2026 but the details are\u2026 incomplete. Best not to ask too many questions.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 2664.0,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n{\"mood\": \"cryptic\", \"action\": \"NONE\", \"line\": \"The stars remember. Some say the Spire holds the key, others the key is in the silence. Choose your path, traveler.\"}"
+      }
+    ]
+  },
+  {
+    "slug": "google__gemma-3-270m-it",
+    "quant": "Q4_K_M",
+    "error": "CalledProcessError: Command '['/home/atowell/.clab-worker/cache/uv/builds-v0/.tmpKSMdGN/bin/python', '/project/alex_phd/npc-text-gen/llama.cpp/convert_hf_to_gguf.py', '/project/alex_phd/npc-text-gen/shootout_v2/checkpoints/google__gemma-3-270m-it', '--outfile', '/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-270m-it_f16.gguf', '--outtype', 'f16']' returned non-zero exit status 1."
+  }
+]

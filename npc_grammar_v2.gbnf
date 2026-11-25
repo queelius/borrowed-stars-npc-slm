@@ -1,0 +1,45 @@
+# Borrowed Stars Dynamic Per-Turn GBNF Grammar Template (v2)
+# Enforces single-shot {"mood", "line", "calls"} with 0..2 typed write actions.
+# At runtime, the game engine narrows the dynamic enum rules strictly to THIS NPC's
+# inventory, offerable quests, epistemic locations, and authorized tools.
+
+root   ::= "{" ws "\"mood\"" ws ":" ws mood "," ws "\"line\"" ws ":" ws line "," ws "\"calls\"" ws ":" ws calls ws "}"
+
+mood   ::= "\"" ("calm" | "wary" | "friendly" | "hostile" | "fearful" | "amused" | "cryptic") "\""
+line   ::= "\"" line-char+ "\""
+calls  ::= "[]" | "[" ws call (ws "," ws call)? ws "]"
+
+call   ::= call-open-trade | call-give-item | call-take-item | call-offer-barter | call-transfer-gold | call-offer-quest | call-post-contract | call-reveal-location | call-unlock-codex | call-teach-glyph | call-set-flag | call-start-escort | call-follow-order | call-perform-service | call-adjust-trust | call-alert-settlement | call-emote | call-initiate-combat | call-cease-hostility | call-end-conv | call-steer-dialogue-node | call-narrator-state | call-narrator-omen
+
+call-open-trade       ::= "{\"tool\":\"open_trade\",\"args\":{\"mode\":\"" ("shop"|"shipyard"|"stable"|"tavern"|"fence") "\"}}"
+call-give-item        ::= "{\"tool\":\"give_item\",\"args\":{\"item_id\":" id-str ",\"qty\":" qty-int "}}"
+call-take-item        ::= "{\"tool\":\"take_item\",\"args\":{\"item_id\":" id-str ",\"qty\":" qty-int "}}"
+call-offer-barter     ::= "{\"tool\":\"offer_barter\",\"args\":{\"item_id\":" id-str ",\"price_gold\":" pos-int "}}"
+call-transfer-gold    ::= "{\"tool\":\"transfer_gold\",\"args\":{\"delta\":" signed-int ",\"reason\":\"" ("reward"|"tip"|"bribe"|"restitution"|"fee"|"wager") "\"}}"
+call-offer-quest      ::= "{\"tool\":\"offer_quest\",\"args\":{\"quest_id\":" id-str "}}"
+call-post-contract    ::= "{\"tool\":\"post_contract\",\"args\":{\"kind\":\"" ("delivery"|"salvage"|"escort"|"bounty"|"survey") "\",\"target_location\":" id-str ",\"reward_gold\":" pos-int "}}"
+call-reveal-location  ::= "{\"tool\":\"reveal_location\",\"args\":{\"location_id\":" id-str ",\"hint\":" short-str "}}"
+call-unlock-codex     ::= "{\"tool\":\"unlock_codex\",\"args\":{\"entry_id\":" id-str "}}"
+call-teach-glyph      ::= "{\"tool\":\"teach_glyph\",\"args\":{\"glyph_id\":" id-str "}}"
+call-set-flag         ::= "{\"tool\":\"set_flag\",\"args\":{\"flag\":" id-str "}}"
+call-start-escort     ::= "{\"tool\":\"start_escort\",\"args\":{\"mode\":\"" ("be_escorted"|"escort_player") "\",\"destination_id\":" id-str "}}"
+call-follow-order     ::= "{\"tool\":\"follow_order\",\"args\":{\"mode\":\"" ("follow"|"wait"|"guard_player"|"dismiss") "\"}}"
+call-perform-service  ::= "{\"tool\":\"perform_service\",\"args\":{\"service\":\"" ("heal"|"rest_inn"|"repair_gear"|"ferry_passage"|"cure_weariness") "\",\"cost_gold\":" nonneg-int "}}"
+call-adjust-trust     ::= "{\"tool\":\"adjust_trust\",\"args\":{\"delta\":" ("-3"|"-2"|"-1"|"1"|"2"|"3") ",\"reason\":" short-str "}}"
+call-alert-settlement ::= "{\"tool\":\"alert_settlement\",\"args\":{\"kind\":\"" ("call_guards"|"cry_for_help"|"spread_rumor"|"clear_alarm") "\"}}"
+call-emote            ::= "{\"tool\":\"emote\",\"args\":{\"animation\":\"" ("nod"|"wave"|"bow"|"laugh"|"sigh"|"shudder"|"point"|"glare") "\"}}"
+call-initiate-combat  ::= "{\"tool\":\"initiate_combat\",\"args\":{\"reason\":" short-str "}}"
+call-cease-hostility  ::= "{\"tool\":\"cease_hostility\",\"args\":{\"reason\":" short-str "}}"
+call-end-conv            ::= "{\"tool\":\"end_conversation\",\"args\":{\"reason\":\"" ("farewell"|"refused"|"offended"|"busy"|"flee") "\"}}"
+call-steer-dialogue-node ::= "{\"tool\":\"steer_dialogue_node\",\"args\":{\"node_id\":" id-str "}}"
+call-narrator-state      ::= "{\"tool\":\"narrator_state\",\"args\":{\"op\":\"" ("discover"|"silence"|"recall") "\"}}"
+call-narrator-omen    ::= "{\"tool\":\"narrator_omen\",\"args\":{\"kind\":\"" ("constellation_glint"|"distant_chime"|"glyph_echo") "\"}}"
+
+id-str     ::= "\"" [a-z0-9_-]+ "\""
+short-str  ::= "\"" line-char+ "\""
+line-char  ::= [^"\\\x00-\x1f] | "\\" ("\"" | "\\" | "n")
+qty-int    ::= [1-5]
+pos-int    ::= [1-9] [0-9]? [0-9]?
+nonneg-int ::= "0" | pos-int
+signed-int ::= "-"? pos-int
+ws         ::= [ \t]*

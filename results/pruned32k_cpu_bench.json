@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "google__gemma-3-1b-it-32k",
+    "quant": "Q4_K_M",
+    "error": "CalledProcessError: Command '['/home/atowell/.clab-worker/cache/uv/builds-v0/.tmpjmKKZ1/bin/python', '/project/alex_phd/npc-text-gen/llama.cpp/convert_hf_to_gguf.py', '/project/alex_phd/npc-text-gen/shootout_v2/checkpoints/google__gemma-3-1b-it-32k', '--outfile', '/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-1b-it-32k_f16.gguf', '--outtype', 'f16']' returned non-zero exit status 1."
+  },
+  {
+    "slug": "google__gemma-3-270m-it-32k",
+    "quant": "Q4_K_M",
+    "error": "CalledProcessError: Command '['/home/atowell/.clab-worker/cache/uv/builds-v0/.tmpjmKKZ1/bin/python', '/project/alex_phd/npc-text-gen/llama.cpp/convert_hf_to_gguf.py', '/project/alex_phd/npc-text-gen/shootout_v2/checkpoints/google__gemma-3-270m-it-32k', '--outfile', '/project/alex_phd/npc-text-gen/gguf_v2/google__gemma-3-270m-it-32k_f16.gguf', '--outtype', 'f16']' returned non-zero exit status 1."
+  },
+  {
+    "slug": "Qwen__Qwen3.5-0.8B-32k",
+    "quant": "Q4_K_M",
+    "gguf_path": "/project/alex_phd/npc-text-gen/gguf_v2/Qwen__Qwen3.5-0.8B-32k_Q4_K_M.gguf",
+    "gguf_mb": 327.89,
+    "perf": {
+      "pp128_t4_tok_s": 229.39,
+      "ttft_pp128_t4_ms": 558.0,
+      "tg64_t4_tok_s": 37.49,
+      "pp128_t8_tok_s": 408.62,
+      "ttft_pp128_t8_ms": 313.2,
+      "tg64_t8_tok_s": 37.76
+    },
+    "samples": [
+      {
+        "idx": 0,
+        "subset": "npc",
+        "wall_ms": 9003.9,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Vesperhold Grand Archive] [NPC: Archivist Linnea, Chief Archivist, Vesperhold] [WORLD: Synod censors requested old almanacs] [PLAYER: Ask about the redacted Synod homily] [IN ... (truncated)\n\n[Start thinking]\n\n{\"mood\": \"cryptic\", \"action\": \"SHARE_RUMOR\", \"line\": \"The Synod\u2019s homily... a sensitive subject.  Some say it\u2019s a warning against the Aethermoor.  Others, a warning against the Aethermoor.  Best not to read it, traveler.\"}"
+      },
+      {
+        "idx": 13,
+        "subset": "narrator_interactive",
+        "wall_ms": 5731.0,
+        "schema_valid": false,
+        "pred": "{\"mood\": <calm|wary|friendly|hostile|fearful|amused|cryptic>, \"action\": <NONE|GREET|TRADE|WARN|DRAW_WEAPON|FLEE|SHARE_RUMOR|OFFER_QUEST>, \"line\": <concise in-character response <= 240 chars>}.\n[LOC: Babel Spire Summit] [NPC: The Narrator, Unseen Chronicler, Outside the Rim] [WORLD: Conjunction approaching; five borrowed stars trembling] [PLAYER: Tell me how this ends.] [ ... (truncated)\n\n[Start thinking]\n\n{\"mood\": \"cryptic\", \"action\": \"NONE\", \"line\": \"The stars do not end, traveler. They merely shift.  The Conjunction holds, but the balance is\u2026 fragile.  What you seek, what you hold, is the true measure.\"}"
+      }
+    ]
+  }
+]
